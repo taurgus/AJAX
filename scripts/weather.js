@@ -1,26 +1,27 @@
-function getWeather() {
-    var city = document.getElementById("city").value;
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var response = JSON.parse(this.responseText);
-            displayWeather(response);
+function getWeather(event) {
+    event.preventDefault(); // Estää defaultin
+    
+    const location = document.getElementById('location').value;
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          const weatherData = JSON.parse(xhr.responseText);
+          const weatherInfo = document.getElementById('weather-info');
+          weatherInfo.innerHTML = `
+            <h2>Sää paikassa ${location}</h2>
+            <p>Lämpötila: ${weatherData.main.temp}°C</p>
+            <p>Kosteus: ${weatherData.main.humidity}%</p>
+            <p>Taivas: ${weatherData.weather[0].description}</p>
+          `;
+        } else {
+          console.error(xhr.statusText);
         }
+      }
     };
-    xhttp.open("GET", "http://api.weatherapi.com/v1/current.json?key=5c69cea1adcc7b793afeaf500214c0c5&q=" + city, true);
-    xhttp.send();
-}
-
-function displayWeather(response) {
-    var weatherDiv = document.getElementById("weather");
-    var city = response.location.name;
-    var temp = response.current.temp_c;
-    var condition = response.current.condition.text;
-    weatherDiv.innerHTML = "Tämänhetkinen lämpötila " + city + "ssa on: " + temp + " astetta, " + condition;
-}
-
-var submitButton = document.getElementById("submit");
-submitButton.addEventListener("click", function(event) {
-    event.preventDefault();
-    getWeather();
-});
+    xhr.open('GET', `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=5c69cea1adcc7b793afeaf500214c0c5&units=metric`);
+    xhr.send();
+  }
+  
+  document.getElementById('weather-form').addEventListener('submit', getWeather);
+  
