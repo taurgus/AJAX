@@ -5,7 +5,7 @@ function getWeather(event) {
     const xml = new XMLHttpRequest();
     xml.onreadystatechange = function() {
       if (xml.readyState === XMLHttpRequest.DONE) {
-        if (xml.status === 200) { //Jos haku onnistuu
+        if (xml.status === 200 && xml.readyState === 4) { //Jos haku onnistuu
           const weatherData = JSON.parse(xml.responseText); //
           const weatherInfo = document.getElementById('weather-info'); //Weather-infoon parsitaan JSON tiedot esille
           weatherInfo.innerHTML = `
