@@ -15,7 +15,7 @@ function getWeather(event) {
             <p>Maa: ${weatherData.sys.country}</p>
             <p>Lämpötila: ${weatherData.main.temp}°C</p>
             <p>Kosteus: ${weatherData.main.humidity}%</p>
-            <p>Tuulennopeus: ${weatherData.wind.speed}km/s</p>
+            <p>Tuulennopeus: ${weatherData.wind.speed} km/s</p>
             <p>Taivas: ${weatherData.weather[0].description}</p>
           `;
         } else if (this.readyState == 4 && this.status == 404) {
