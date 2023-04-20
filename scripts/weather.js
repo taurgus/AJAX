@@ -1,6 +1,7 @@
 function getWeather(event) {
     event.preventDefault(); // Estää defaultin
-    
+
+
     const api = "5c69cea1adcc7b793afeaf500214c0c5"; //API key
     const location = document.getElementById('location').value; //Valitaan location indexistä
     const xml = new XMLHttpRequest(); //Uusi xml haku
@@ -11,9 +12,10 @@ function getWeather(event) {
           const weatherInfo = document.getElementById('weather-info'); //Weather-infoon parsitaan JSON tiedot esille
           weatherInfo.innerHTML = `
             <h2>Sää paikassa ${location}</h2>
+            <p>Maa: ${weatherData.sys.country}</p>
             <p>Lämpötila: ${weatherData.main.temp}°C</p>
             <p>Kosteus: ${weatherData.main.humidity}%</p>
-            <p>Tuulennopeus: ${weatherData.wind.speed}%</p>
+            <p>Tuulennopeus: ${weatherData.wind.speed}km/s</p>
             <p>Taivas: ${weatherData.weather[0].description}</p>
           `;
         } else if (this.readyState == 4 && this.status == 404) {
