@@ -17,8 +17,9 @@ https://www.youtube.com/watch?v=ivGh7yKGPnY - kaikki kolme videota
 
 https://www.youtube.com/watch?v=PXJnCFbcuTs
 
+https://www.youtube.com/watch?v=6trGQWzg2AI
 
 
 Laurea GitHub
 
-Virheineen päivineen käytetty aika taas about 20 h.
+Virheineen päivineen käytetty aika  about 20 h.
