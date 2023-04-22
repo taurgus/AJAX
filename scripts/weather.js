@@ -31,7 +31,7 @@ function getWeather(event) {
         } 
       }
     }; //Seuraavassa kohdassa oli kaikkein suurin ongelma saada toimimaan, perkele
-    xml.open('GET', `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=`+ apiKey); // Open Weatherin API avaimella toteutetaan haku
+    xml.open('GET', `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&lang=fi&appid=`+ apiKey); // Open Weatherin API avaimella toteutetaan haku
     xml.send();
   }
 
