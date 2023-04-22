@@ -11,6 +11,10 @@ https://www.w3schools.com/xml/ajax_xmlhttprequest_create.asp
 https://www.w3schools.com/xml/ajax_xmlhttprequest_send.asp
 
 
+https://openweathermap.org/current#multi
+
+https://openweathermap.org/forecast16#name16
+
 
 
 https://www.youtube.com/watch?v=ivGh7yKGPnY - kaikki kolme videota
