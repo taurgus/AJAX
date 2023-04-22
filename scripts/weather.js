@@ -3,6 +3,7 @@ function getWeather(event) {
 
     //Muuttujat
     const apiKey = "5c69cea1adcc7b793afeaf500214c0c5"; //API key
+    var weatherdata = "https://openweathermap.org/img/wn/10d@2x.png";
     const location = document.getElementById('location').value; 
     const xml = new XMLHttpRequest(); //Uusi xml haku
 
@@ -21,7 +22,8 @@ function getWeather(event) {
             <p>Tuulennopeus: ${weatherData.wind.speed} km/s</p>
             <p>Pilvisyys: ${weatherData.clouds.all}</p>
             <p>Taivas: ${weatherData.weather[0].description}</p>
-            <p>Icon: ${weatherData.weather.icon}</p>
+            <p><img src="/AJAX/icons${weatherData.weather[0].icon}.png"></p>
+            
           `;
         } else if (this.readyState == 4 && this.status == 404) { //Jos kaupunkia ei löydy niin ilmoitus
           alert("Ei löydy! " + this.readyState + "   " + this.status);
@@ -32,6 +34,8 @@ function getWeather(event) {
     xml.open('GET', `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=`+ apiKey); // Open Weatherin API avaimella toteutetaan haku
     xml.send();
   }
+
+  
   
   document.getElementById('weather-form').addEventListener('submit', getWeather); //Haetaan elementtiin weather-form säätiedot.
   
