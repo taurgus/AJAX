@@ -13,7 +13,7 @@ function getWeather(event) {
           const weatherData = JSON.parse(xml.responseText); //
           const weatherInfo = document.getElementById('weather-info'); //Weather-infoon parsitaan JSON tiedot esille
 
-          //Eri säätiedot identifiers
+          //Eri säätiedot identifierseillä
           weatherInfo.innerHTML = ` 
             <h2>Sää paikassa ${location}</h2>
             <p>Maa: ${weatherData.sys.country}</p>
