@@ -22,7 +22,7 @@ function getWeather(event) {
             <p>Tuulennopeus: ${weatherData.wind.speed} km/s</p>
             <p>Pilvisyys: ${weatherData.clouds.all}</p>
             <p>Taivas: ${weatherData.weather[0].description}</p>
-            <p><img src="/AJAX/icons${weatherData.weather[0].icon}.png"></p>
+            <p><img src="/icons/${weatherData.weather[0].icon}.png"></p>
             
           `;
         } else if (this.readyState == 4 && this.status == 404) { //Jos kaupunkia ei löydy niin ilmoitus
