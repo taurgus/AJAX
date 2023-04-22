@@ -11,6 +11,7 @@ function getWeather(event) {
         if (xml.status === 200 && xml.readyState === 4) { //Jos haku onnistuu
           const weatherData = JSON.parse(xml.responseText); //
           const weatherInfo = document.getElementById('weather-info'); //Weather-infoon parsitaan JSON tiedot esille
+
           //Eri säätiedot identifiers
           weatherInfo.innerHTML = ` 
             <h2>Sää paikassa ${location}</h2>
@@ -20,6 +21,7 @@ function getWeather(event) {
             <p>Tuulennopeus: ${weatherData.wind.speed} km/s</p>
             <p>Pilvisyys: ${weatherData.clouds.all}</p>
             <p>Taivas: ${weatherData.weather[0].description}</p>
+            <p>Icon: ${weatherData.weather.icon}</p>
           `;
         } else if (this.readyState == 4 && this.status == 404) { //Jos kaupunkia ei löydy niin ilmoitus
           alert("Ei löydy! " + this.readyState + "   " + this.status);
