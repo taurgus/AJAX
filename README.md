@@ -22,4 +22,4 @@ https://www.youtube.com/watch?v=6trGQWzg2AI
 
 Laurea GitHub
 
-Virheineen päivineen käytetty aika  about 20 h.
+Tehtävään käytetty paljon aikaa ja silti jää kesken.

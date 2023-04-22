@@ -1,9 +1,9 @@
 function getWeather(event) {
-    event.preventDefault(); // Estää defaultin
+    event.preventDefault(); 
 
     //Muuttujat
-    const api = "5c69cea1adcc7b793afeaf500214c0c5"; //API key
-    const location = document.getElementById('location').value; //Valitaan location indexistä
+    const apiKey = "5c69cea1adcc7b793afeaf500214c0c5"; //API key
+    const location = document.getElementById('location').value; 
     const xml = new XMLHttpRequest(); //Uusi xml haku
 
     xml.onreadystatechange = function() {
@@ -11,7 +11,7 @@ function getWeather(event) {
         if (xml.status === 200 && xml.readyState === 4) { //Jos haku onnistuu
           const weatherData = JSON.parse(xml.responseText); //
           const weatherInfo = document.getElementById('weather-info'); //Weather-infoon parsitaan JSON tiedot esille
-          //Eri säätiedot
+          //Eri säätiedot identifiers
           weatherInfo.innerHTML = ` 
             <h2>Sää paikassa ${location}</h2>
             <p>Maa: ${weatherData.sys.country}</p>
@@ -26,10 +26,10 @@ function getWeather(event) {
           return;
         } 
       }
-    }; //Seuraavassa kohdassa oli kaikkein suurin ongelma saada toimimaan
-    xml.open('GET', `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=5c69cea1adcc7b793afeaf500214c0c5`); // Open Weatherin API avaimella toteutetaan haku
+    }; //Seuraavassa kohdassa oli kaikkein suurin ongelma saada toimimaan, perkele
+    xml.open('GET', `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=`+ apiKey); // Open Weatherin API avaimella toteutetaan haku
     xml.send();
   }
   
-  document.getElementById('weather-form').addEventListener('submit', getWeather); //Nappia painamalla haetaan elementtiin weather-form säätiedot.
+  document.getElementById('weather-form').addEventListener('submit', getWeather); //Haetaan elementtiin weather-form säätiedot.
   
