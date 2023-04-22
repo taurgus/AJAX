@@ -1,15 +1,18 @@
-/* Itse pidän minimalistisesta estetiikasta */
-
 body {
     font-family: 'Alegreya Sans SC';
     font-size: 22px;
     margin: 0;
     padding: 0;
+    background-image: url("images/weather.jpg");
+
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   
   h1{
     text-align: center;
     margin: auto;
+    color: #007bff;
   }
   
   #weather-form {
@@ -64,4 +67,5 @@ body {
 
   #weather-info:empty {
     border: none;
+    background-color: transparent;
   }
