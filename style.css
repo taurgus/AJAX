@@ -3,10 +3,14 @@ body {
     font-size: 22px;
     margin: 0;
     padding: 0;
-    background-image: url("images/weather.jpg");
+   /* background-image: url("images/weather.jpg");
 
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; 
+    
+    Vaihtoehtoinen tausta Kummelin säämiehestä
+
+    */
   }
   
   h1{
