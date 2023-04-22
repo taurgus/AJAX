@@ -25,8 +25,8 @@ function getWeather(event) {
             <p><img src="/icons/${weatherData.weather[0].icon}.png" alt="Icon not found"></p>
             
           `;
-        } else if (this.readyState == 4 && this.status == 404) { //Jos kaupunkia ei löydy niin ilmoitus
-          alert("Ei löydy! " + this.readyState + "   " + this.status);
+        } else if (this.readyState == 4 && this.status == 404) { //Jos kaupunkia ei löydy tai kirjoitettu väärin etc, niin ilmoitus
+          alert("Kaupunkia ei löydy! " + this.readyState + "   " + this.status);
           return;
         } 
       }
