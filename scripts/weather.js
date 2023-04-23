@@ -8,7 +8,7 @@ function getWeather(event) {
     const xml = new XMLHttpRequest(); //Uusi xml haku
 
     xml.onreadystatechange = function() {
-      if (xml.readyState === XMLHttpRequest.DONE) {
+      if (xml.readyState === XMLHttpRequest.DONE) {       //Server responses
         if (xml.status === 200 && xml.readyState === 4) { //Jos haku onnistuu
           const weatherData = JSON.parse(xml.responseText); //
           const weatherInfo = document.getElementById('weather-info'); //Weather-infoon parsitaan JSON tiedot esille
@@ -26,7 +26,7 @@ function getWeather(event) {
             
           `;
         } else if (this.readyState == 4 && this.status == 404) { //Jos kaupunkia ei löydy tai kirjoitettu väärin etc, niin ilmoitus
-          alert("Kaupunkia ei löydy! " + this.readyState + "   " + this.status);
+          alert("Kaupunkia ei löydy! " + this.readyState + "   " + this.status); //Server response koodit
           return;
         } 
       }
