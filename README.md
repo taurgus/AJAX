@@ -10,6 +10,8 @@ https://www.w3schools.com/xml/ajax_xmlhttprequest_create.asp
 
 https://www.w3schools.com/xml/ajax_xmlhttprequest_send.asp
 
+https://developer.mozilla.org/en-US/docs/Web/API
+
 
 https://openweathermap.org/current#multi
 
@@ -26,4 +28,3 @@ https://www.youtube.com/watch?v=6trGQWzg2AI
 
 Laurea GitHub
 
-Tehtävään käytetty paljon aikaa ja silti jää kesken.
