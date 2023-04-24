@@ -34,8 +34,6 @@ function getWeather(event) {
     xml.open('GET', `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&lang=fi&appid=`+ apiKey); // Open Weatherin API avaimella toteutetaan haku
     xml.send();
   }
-
-  
-  
-  document.getElementById('weather-form').addEventListener('submit', getWeather); //Haetaan elementtiin weather-form säätiedot.
+    
+  document.getElementById('weather-form').addEventListener('submit', getWeather); //Haetaan elementtiin "weather-form" säätiedot.
   
