@@ -27,6 +27,8 @@ function getWeather(event) {
           `; // Nollat korvataan APIn tiedolla, esim sää iconin numerokoodin tilalle oikea kuva
         } else if (this.readyState == 4 && this.status == 404) { //Jos kaupunkia ei löydy tai kirjoitettu väärin etc, niin ilmoitus
           alert("Kaupunkia ei löydy! " + this.readyState + "   " + this.status); //Server response koodit
+          console.log(this.readyState);
+          console.log(this.status);
           return;
         } 
       }
