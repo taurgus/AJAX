@@ -1,5 +1,7 @@
 # AJAX
 
+https://codedamn.com/news/javascript/dollar-sign-in-js
+
 https://openweathermap.org/
 
 https://www.w3schools.com/js/js_events.asp

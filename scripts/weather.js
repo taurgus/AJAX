@@ -22,9 +22,9 @@ function getWeather(event) {
             <p>Tuulennopeus: ${weatherData.wind.speed} km/s</p>
             <p>Pilvisyys: ${weatherData.clouds.all}</p>
             <p>Taivas: ${weatherData.weather[0].description}</p>
-            <p><img src="/icons/${weatherData.weather[0].icon}.png" alt="Icon not found"></p>
+            <p><img src="/icons/${weatherData.weather[0].icon}.png" alt="Icon not found"></p>  
             
-          `;
+          `; // Nollat korvataan APIn tiedolla, esim sää iconin numerokoodin tilalle oikea kuva
         } else if (this.readyState == 4 && this.status == 404) { //Jos kaupunkia ei löydy tai kirjoitettu väärin etc, niin ilmoitus
           alert("Kaupunkia ei löydy! " + this.readyState + "   " + this.status); //Server response koodit
           return;
