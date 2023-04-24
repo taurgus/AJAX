@@ -3,13 +3,12 @@ function getWeather(event) {
 
     //Muuttujat
     const apiKey = "5c69cea1adcc7b793afeaf500214c0c5"; //API key
-    var weatherdata = "https://openweathermap.org/img/wn/10d@2x.png";
     const location = document.getElementById('location').value; 
     const xml = new XMLHttpRequest(); //Uusi xml haku
 
     xml.onreadystatechange = function() {
       if (xml.readyState === XMLHttpRequest.DONE) {       //Server responses
-        if (xml.status === 200 && xml.readyState === 4) { //Jos haku onnistuu
+        if (xml.status === 200 && xml.readyState === 4) { //Jos xml status on 200 ja valmius 4, AJAX haku onnistuu
           const weatherData = JSON.parse(xml.responseText); //
           const weatherInfo = document.getElementById('weather-info'); //Weather-infoon parsitaan JSON tiedot esille
 
@@ -27,7 +26,7 @@ function getWeather(event) {
           `; // Nollat korvataan APIn tiedolla, esim sää iconin numerokoodin tilalle oikea kuva
         } else if (this.readyState == 4 && this.status == 404) { //Jos kaupunkia ei löydy tai kirjoitettu väärin etc, niin ilmoitus
           alert("Kaupunkia ei löydy! " + this.readyState + "   " + this.status); //Server response koodit
-          console.log(this.readyState);
+          console.log(this.readyState); //Merkataan console logiin virhekoodit
           console.log(this.status);
           return;
         } 
